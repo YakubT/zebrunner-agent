@@ -1,8 +1,8 @@
-package utils;
+package com.solvd.zebrunner_agent.utils.enums;
 
 public enum Resources {
 
-    AGENT_CONFIG("./src/main/resources/agent.properties");
+    AGENT_CONFIG("./src/test/resources/agent.properties");
 
     private final String path;
 
