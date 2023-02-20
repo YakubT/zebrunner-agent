@@ -1,7 +1,5 @@
 package com.solvd.zebrunner_agent;
 
-
-import jdk.jshell.spi.ExecutionControl;
 import utils.PropertiesReader;
 import utils.Resources;
 
@@ -18,6 +16,6 @@ public class AuthService {
     }
 
     public static void refreshToken() {
-        
+
     }
 }

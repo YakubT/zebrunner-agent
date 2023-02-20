@@ -4,7 +4,8 @@ public enum Resources {
 
     AGENT_CONFIG("./src/main/resources/agent.properties");
 
-    String path;
+    private final String path;
+
     Resources (String path) {
         this.path = path;
     }
