@@ -1,5 +1,6 @@
 package com.solvd.zebrunner_agent.methods;
 
+import com.solvd.zebrunner_agent.AuthService;
 import com.solvd.zebrunner_agent.utils.PropertiesReader;
 import com.solvd.zebrunner_agent.utils.enums.Resources;
 import com.qaprosoft.carina.core.foundation.api.AbstractApiMethodV2;
@@ -10,10 +11,13 @@ public class BaseApiMethod extends AbstractApiMethodV2 {
 
     public BaseApiMethod(String rq, String rs) {
         super(rq, rs);
+        //setAuth();
     }
 
     public BaseApiMethod(String rq, String rs, String prop) {
         super(rq, rs, prop);
+        //setAuth();
+        replaceUrlPlaceholder("base_url", getAgentConfig().getValue("hostname"));
     }
 
     public PropertiesReader getAgentConfig() {
@@ -22,5 +26,9 @@ public class BaseApiMethod extends AbstractApiMethodV2 {
 
     public void setAgentConfig(PropertiesReader agentConfig) {
         this.agentConfig = agentConfig;
+    }
+
+    protected void setAuth() {
+        setHeaders("Authorization=Bearer " + AuthService.getAuthToken());
     }
 }

@@ -1,0 +1,11 @@
+[2023-02-21 09:20:42] [1] [INFO] [TestNG] Running:
+  /Users/anatoliiyakubyshyn/Library/Caches/JetBrains/IdeaIC2022.3/temp-testng-customsuite.xml
+
+[2023-02-21 09:20:45] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-21 09:20:47] [1] [INFO] {"tenantName":"solvdinternal","userId":45,"permissionsSuperset":["reporting:stacktrace-labels:assign"],"projectAssignments":[{"projectId":13,"role":"GUEST"},{"projectId":32,"role":"GUEST"},{"projectId":12,"role":"GUEST"},{"projectId":31,"role":"GUEST"},{"projectId":11,"role":"GUEST"},{"projectId":30,"role":"ADMINISTRATOR"},{"projectId":36,"role":"GUEST"},{"projectId":29,"role":"GUEST"},{"projectId":35,"role":"GUEST"},{"projectId":9,"role":"GUEST"},{"projectId":28,"role":"GUEST"},{"projectId":34,"role":"GUEST"},{"projectId":8,"role":"GUEST"},{"projectId":27,"role":"GUEST"},{"projectId":1,"role":"GUEST"},{"projectId":33,"role":"GUEST"}],"authTokenType":"Bearer","authToken":"eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_4WSX0vDMBTFv8t9rrD-jeZtoEgfprDVJxFJu8vMlt6UJBXL2Hf3FlGQQfOWnN8990ByzuDHFiQUJSQwenSkeuS7mtRpbCf_MRGDAV2vvdeWPMhXcDhYFzQdpA-qOwWnOrwxqkXjpeKxA8Ebm5w9Yhfef5QeKczm869e70GmeQLOmjnw8eVh18Al-cfzbJmnEZ6nEX-E56s_vr7f1E_1rtmum-ft1Vy1vCe7i-SUyzxiz24j64tlHrFnIvKKkfSrT-ZyBCRFgSVvzedeU5ibZ7hqXDNWter5jF8Db6-EWJWiKsTlGxd2J4qtAgAA.5S6rGIMkIVLeKqUV-WCfYjtuPfgOYbi1n4w56TcoCqp91AD0bJjmmBvVhfJ3-SvPnep2pN9o40wRj_fyWk0GSg","authTokenExpiresAt":"2023-02-22T09:20:47.514216680Z","refreshToken":"o9DLhfSmkux7wrLZbNlK5wAlcBjT5kLVM5I2LUB3bXBVEbva9e","authTokenExpirationInSecs":43199}
+[2023-02-21 09:20:48] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-21 09:20:49] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-21 09:20:50] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-21 09:20:50] [1] [INFO] 6102
+[2023-02-21 09:20:50] [1] [INFO] 12305
+[2023-02-21 09:20:50] [1] [INFO] Base properties loaded: api/agent.properties

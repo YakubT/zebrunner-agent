@@ -1,16 +1,18 @@
 package com.solvd.zebrunner_agent.enums;
 
-public enum ResponseKey {
+public enum TestStatus {
 
-    AUTH_TOKEN("authToken"),
+    PASSED("PASSED"),
 
-    TEST_RUN("id"),
+    FAILED("FAILED"),
 
-    TEST_ID("id");
+    ABORTED("ABORTED"),
+
+    SKIPPED("SKIPPED");
 
     private String value;
 
-    ResponseKey(String value) {
+    TestStatus(String value) {
         this.value = value;
     }
 
