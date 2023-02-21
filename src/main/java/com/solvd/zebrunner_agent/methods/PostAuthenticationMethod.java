@@ -1,8 +1,5 @@
 package com.solvd.zebrunner_agent.methods;
 
-import com.solvd.zebrunner_agent.AuthService;
-
-import java.util.Properties;
 
 public class PostAuthenticationMethod extends BaseApiMethod {
 
