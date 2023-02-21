@@ -21,6 +21,6 @@ public class AuthService {
 
     public static void refreshToken() {
         Response response = new PostAuthenticationMethod().callAPI();
-        AuthService.authToken = JsonPath.from(response.asInputStream()).get("authToken").toString();
+        AuthService.authToken = JsonPath.from(response.asString()).get("authToken").toString();
     }
 }
