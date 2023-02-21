@@ -16,7 +16,6 @@ public class BaseApiMethod extends AbstractApiMethodV2 {
         super(rq, rs, prop);
     }
 
-
     public PropertiesReader getAgentConfig() {
         return agentConfig;
     }
