@@ -1,6 +1,6 @@
 {
   "startedAt": "${startedAt}",
   "name": "${name}",
-  "className": "ZebrunnerAgentTest",
-  "methodName": "testTestExecutionPassed"
+  "className": "{className}",
+  "methodName": "{methodName}"
 }

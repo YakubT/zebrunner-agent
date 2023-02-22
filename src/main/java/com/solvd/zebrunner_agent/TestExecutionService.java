@@ -25,8 +25,9 @@ public class TestExecutionService {
         putTestRunExecutionFinishMethod.callAPI();
     }
 
-    public static void testExecutionStart(String name) {
-        PostTestExecutionStartMethod postTestExecutionStartMethod = new PostTestExecutionStartMethod(name);
+    public static void testExecutionStart(String name, String claasName, String methodName) {
+        PostTestExecutionStartMethod postTestExecutionStartMethod = new PostTestExecutionStartMethod(name,
+                claasName,methodName);
         Validator.isExpectStatusOK(postTestExecutionStartMethod);
         Response response = postTestExecutionStartMethod.callAPI();
         TestBuffer.setTestId(JsonPath.from(response.asString()).get(ResponseKey.TEST_ID.getValue()));
