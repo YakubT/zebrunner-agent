@@ -1,4 +1,4 @@
 {
-  "endedAt": "2023-02-21T09:00:10",
-  "result": "PASSED"
+  "endedAt": "${endedAt}",
+  "result": "${result}"
 }

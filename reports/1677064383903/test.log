@@ -1,0 +1,15 @@
+[2023-02-22 11:13:03] [1] [INFO] [TestNG] Running:
+  /Users/anatoliiyakubyshyn/Library/Caches/JetBrains/IdeaIC2022.3/temp-testng-customsuite.xml
+
+[2023-02-22 11:13:06] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-22 11:13:09] [1] [INFO] {"tenantName":"solvdinternal","userId":45,"permissionsSuperset":["reporting:stacktrace-labels:assign"],"projectAssignments":[{"projectId":13,"role":"GUEST"},{"projectId":32,"role":"GUEST"},{"projectId":12,"role":"GUEST"},{"projectId":31,"role":"GUEST"},{"projectId":11,"role":"GUEST"},{"projectId":30,"role":"ADMINISTRATOR"},{"projectId":36,"role":"GUEST"},{"projectId":29,"role":"GUEST"},{"projectId":35,"role":"GUEST"},{"projectId":9,"role":"GUEST"},{"projectId":28,"role":"GUEST"},{"projectId":34,"role":"GUEST"},{"projectId":8,"role":"GUEST"},{"projectId":27,"role":"GUEST"},{"projectId":1,"role":"GUEST"},{"projectId":33,"role":"GUEST"}],"authTokenType":"Bearer","authToken":"eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_4WSUWvCMBSF_8t97sC21nZ5ExzSh03Q7knGSOvFRdOkJKmsiP_dW8YGQ-h9S853zz2QnCv4vgYB8wwi6D06I1ukuxzkua8H_zUYAh26VnmvrPEg9uCwsy4ocxQ-yOYcnGzwScsatReSxo4GPsjk7Amb8PmjtGjCaL7-6uUBRJxG4KweA9fvL7sKbtE_nibTPGZ4GjN-hqezP75cvZZv5a7aLqvN9mFuMb0neWZysmnO2JOCWT-f5ow9yZlXZNIfPpnKEdBIE0jyVl8OyoSxeZqqRjUjVcmWzvjd0fZFnsezPCuK2x1VpqrgrQIAAA.tchSMjyqEL-i2gUnTRmrA6Al7gpyUlBV7YWqNeZIwjwq_3-w7fCndgczbsvCBALMK_YYTuJ7s2VVdRF86_w-PA","authTokenExpiresAt":"2023-02-22T23:13:08.953735968Z","refreshToken":"MABFP5soFHmHox4KPdVp2EzEpOLYZFPOy24CYgNfs3HnR3VYyX","authTokenExpirationInSecs":43199}
+[2023-02-22 11:13:10] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-22 11:13:10] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-22 11:13:11] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-22 11:13:11] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-22 11:13:12] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-22 11:13:12] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-22 11:13:12] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-22 11:13:13] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-22 11:13:13] [1] [INFO] Base properties loaded: api/agent.properties
+[2023-02-22 11:13:13] [1] [INFO] Base properties loaded: api/agent.properties

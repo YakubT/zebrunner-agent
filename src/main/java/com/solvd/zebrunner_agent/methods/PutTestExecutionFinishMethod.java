@@ -11,6 +11,7 @@ public class PutTestExecutionFinishMethod extends BaseApiMethod {
         super("api/singletest/put/rq.json", "api/singletest/put/rs.json","api/agent.properties");
         replaceUrlPlaceholder("testRunId", String.valueOf(TestBuffer.getTestRunId()));
         replaceUrlPlaceholder("testId", String.valueOf(TestBuffer.getTestId()));
+        addProperty("endedAt",DateTime.now());
         setAuth();
     }
 }

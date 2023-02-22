@@ -1,5 +1,5 @@
 {
-  "startedAt": "2023-02-21T09:00:10",
-  "name": "${run_name}",
+  "startedAt": "${startedAt}",
+  "name": "${runName}",
   "framework": "testng"
 }

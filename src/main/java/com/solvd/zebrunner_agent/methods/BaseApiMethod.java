@@ -11,12 +11,10 @@ public class BaseApiMethod extends AbstractApiMethodV2 {
 
     public BaseApiMethod(String rq, String rs) {
         super(rq, rs);
-        //setAuth();
     }
 
     public BaseApiMethod(String rq, String rs, String prop) {
         super(rq, rs, prop);
-        //setAuth();
         replaceUrlPlaceholder("base_url", getAgentConfig().getValue("hostname"));
     }
 

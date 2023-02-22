@@ -3,6 +3,7 @@ package com.solvd.zebrunner_agent;
 import com.solvd.zebrunner_agent.enums.TestStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class ZebrunnerAgentTest {
@@ -11,26 +12,40 @@ public class ZebrunnerAgentTest {
 
     @Test
     public void testAuthentication() {
-        LOGGER.info(AuthService.getAuthToken());
         AuthService.refreshToken();
-        LOGGER.info(AuthService.getAuthToken());
     }
 
     @Test
     public void testTestRunExecution() {
         AuthService.refreshToken();
-        TestExecutionService.startTestRun();
+        TestExecutionService.startTestRun("Zebrunner Agent authentication");
+        TestExecutionService.finishTestRun();
+    }
+
+    @Test(dataProvider = "testStatuses")
+    public void testTestExecution(TestStatus testStatus) {
+        AuthService.refreshToken();
+        TestExecutionService.startTestRun("Zebrunner Agent data provider test");
+        TestExecutionService.testExecutionStart("zebrunner-agent test");
+        TestExecutionService.testExecutionFinish(testStatus);
         TestExecutionService.finishTestRun();
     }
 
     @Test
-    public void testTestExecutionPassed() {
+    public void testTestExecutionInOneRun() {
         AuthService.refreshToken();
-        TestExecutionService.startTestRun();
-        TestExecutionService.testExecutionStart("zebrunner-agent test");
-        TestExecutionService.testExecutionFinish(TestStatus.PASSED);
-        LOGGER.info(TestBuffer.getTestRunId());
-        LOGGER.info(TestBuffer.getTestId());
+        TestExecutionService.startTestRun("Zebrunner Agent tests in one run");
+        for (TestStatus testStatus:TestStatus.values()) {
+            TestExecutionService.testExecutionStart("zebrunner-agent test "+testStatus.getValue());
+            TestExecutionService.testExecutionFinish(testStatus);
+        }
+
         TestExecutionService.finishTestRun();
+    }
+
+    @DataProvider(name = "testStatuses")
+    public Object[][] dataProvider() {
+        return new Object[][]{{TestStatus.PASSED}, {TestStatus.FAILED},
+                {TestStatus.SKIPPED}, {TestStatus.ABORTED}};
     }
 }

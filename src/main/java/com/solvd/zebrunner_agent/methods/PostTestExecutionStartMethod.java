@@ -9,6 +9,8 @@ public class PostTestExecutionStartMethod extends BaseApiMethod {
     public PostTestExecutionStartMethod(String name) {
         super("api/singletest/post/rq.json", "api/singletest/post/rs.json","api/agent.properties");
         replaceUrlPlaceholder("testRunId", String.valueOf(TestBuffer.getTestRunId()));
+        addProperty("startedAt", DateTime.now());
+        addProperty("name",name);
         setAuth();
     }
 }
