@@ -14,23 +14,27 @@ public class TestExecutionService {
 
     public static void startTestRun(String RunName) {
         PostTestRunStartMethod postTestRunStartMethod = new PostTestRunStartMethod(RunName);
+        Validator.isExpectStatusOK(postTestRunStartMethod);
         Response response = postTestRunStartMethod.callAPI();
         TestBuffer.setTestRunId(JsonPath.from(response.asString()).get(ResponseKey.TEST_RUN.getValue()));
     }
 
     public static void finishTestRun() {
         PutTestRunExecutionFinishMethod putTestRunExecutionFinishMethod = new PutTestRunExecutionFinishMethod();
+        Validator.isExpectStatusOK(putTestRunExecutionFinishMethod);
         putTestRunExecutionFinishMethod.callAPI();
     }
 
     public static void testExecutionStart(String name) {
         PostTestExecutionStartMethod postTestExecutionStartMethod = new PostTestExecutionStartMethod(name);
+        Validator.isExpectStatusOK(postTestExecutionStartMethod);
         Response response = postTestExecutionStartMethod.callAPI();
         TestBuffer.setTestId(JsonPath.from(response.asString()).get(ResponseKey.TEST_ID.getValue()));
     }
 
     public static void testExecutionFinish(TestStatus status) {
         PutTestExecutionFinishMethod putTestExecutionFinishMethod = new PutTestExecutionFinishMethod(status);
+        Validator.isExpectStatusOK(putTestExecutionFinishMethod);
         putTestExecutionFinishMethod.addProperty("result",status.getValue());;
         Response response = putTestExecutionFinishMethod.callAPI();
     }

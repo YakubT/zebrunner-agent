@@ -27,8 +27,9 @@ public class AuthService {
     }
 
     public static void refreshToken() {
-        Response response = new PostAuthenticationMethod().callAPI();
-        LOGGER.info(response.asString());
+        PostAuthenticationMethod postAuthenticationMethod = new PostAuthenticationMethod();
+        Response response = postAuthenticationMethod.callAPI();
+        Validator.isExpectStatusOK(postAuthenticationMethod);
         AuthService.authToken = JsonPath.from(response.asString()).get(ResponseKey.AUTH_TOKEN.getValue()).toString();
     }
 }
