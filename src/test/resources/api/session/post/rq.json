@@ -1,0 +1,9 @@
+{
+  "initiatedAt": "${initiatedAt}",
+  "startedAt": "${startedAt}",
+  "status": "COMPLETED",
+  "desiredCapabilities": {
+    "browserName": "${browser}",
+    "platformName": "${platformName}"
+  }
+}

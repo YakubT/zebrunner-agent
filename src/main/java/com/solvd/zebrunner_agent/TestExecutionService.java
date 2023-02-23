@@ -1,14 +1,11 @@
 package com.solvd.zebrunner_agent;
 
+import com.solvd.zebrunner_agent.methods.*;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 import com.solvd.zebrunner_agent.enums.ResponseKey;
 import com.solvd.zebrunner_agent.enums.TestStatus;
-import com.solvd.zebrunner_agent.methods.PostTestRunStartMethod;
-import com.solvd.zebrunner_agent.methods.PostTestExecutionStartMethod;
-import com.solvd.zebrunner_agent.methods.PutTestExecutionFinishMethod;
-import com.solvd.zebrunner_agent.methods.PutTestRunExecutionFinishMethod;
 
 public class TestExecutionService {
 
@@ -27,7 +24,7 @@ public class TestExecutionService {
 
     public static void testExecutionStart(String name, String claasName, String methodName) {
         PostTestExecutionStartMethod postTestExecutionStartMethod = new PostTestExecutionStartMethod(name,
-                claasName,methodName);
+                claasName, methodName);
         Validator.isExpectStatusOK(postTestExecutionStartMethod);
         Response response = postTestExecutionStartMethod.callAPI();
         TestBuffer.setTestId(JsonPath.from(response.asString()).get(ResponseKey.TEST_ID.getValue()));
@@ -36,7 +33,13 @@ public class TestExecutionService {
     public static void testExecutionFinish(TestStatus status) {
         PutTestExecutionFinishMethod putTestExecutionFinishMethod = new PutTestExecutionFinishMethod(status);
         Validator.isExpectStatusOK(putTestExecutionFinishMethod);
-        putTestExecutionFinishMethod.addProperty("result",status.getValue());;
+        putTestExecutionFinishMethod.addProperty("result", status.getValue());
         Response response = putTestExecutionFinishMethod.callAPI();
+    }
+
+    public static void testSessionComplete() {
+        PostTestSessionCompleteMethod postTestSessionCompleteMethod = new PostTestSessionCompleteMethod();
+        Validator.isExpectStatusOK(postTestSessionCompleteMethod);
+        postTestSessionCompleteMethod.callAPI();
     }
 }
