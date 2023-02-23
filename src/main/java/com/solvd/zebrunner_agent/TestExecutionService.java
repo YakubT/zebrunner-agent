@@ -1,11 +1,16 @@
 package com.solvd.zebrunner_agent;
 
-import com.solvd.zebrunner_agent.methods.*;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 import com.solvd.zebrunner_agent.enums.ResponseKey;
 import com.solvd.zebrunner_agent.enums.TestStatus;
+import com.solvd.zebrunner_agent.methods.PostTestRunStartMethod;
+import com.solvd.zebrunner_agent.methods.PostTestExecutionStartMethod;
+import com.solvd.zebrunner_agent.methods.PostTestSessionCompleteMethod;
+import com.solvd.zebrunner_agent.methods.PutTestExecutionFinishMethod;
+import com.solvd.zebrunner_agent.methods.PutTestRunExecutionFinishMethod;
+
 
 public class TestExecutionService {
 
