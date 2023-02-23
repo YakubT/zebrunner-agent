@@ -1,14 +1,23 @@
 package com.solvd.zebrunner_agent;
 
-import com.solvd.zebrunner_agent.methods.*;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.solvd.zebrunner_agent.enums.ResponseKey;
 import com.solvd.zebrunner_agent.enums.TestStatus;
-
+import com.solvd.zebrunner_agent.methods.PutTestExecutionFinishMethod;
+import com.solvd.zebrunner_agent.methods.PutTestSessionFinishMethod;
+import com.solvd.zebrunner_agent.methods.PutTestRunExecutionFinishMethod;
+import com.solvd.zebrunner_agent.methods.PostTestExecutionStartMethod;
+import com.solvd.zebrunner_agent.methods.PostTestSessionCompleteMethod;
+import com.solvd.zebrunner_agent.methods.PostTestRunStartMethod;
 
 public class TestExecutionService {
+
+    private static final Logger LOGGER = LogManager.getLogger(TestExecutionService.class);
 
     public static void startTestRun(String RunName) {
         PostTestRunStartMethod postTestRunStartMethod = new PostTestRunStartMethod(RunName);

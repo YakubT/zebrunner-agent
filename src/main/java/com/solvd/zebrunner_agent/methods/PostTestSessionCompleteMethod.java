@@ -1,15 +1,15 @@
 package com.solvd.zebrunner_agent.methods;
 
-import com.solvd.zebrunner_agent.TestBuffer;
 import org.joda.time.DateTime;
+
+import com.solvd.zebrunner_agent.TestBuffer;
 
 public class PostTestSessionCompleteMethod extends BaseApiMethod {
 
     public PostTestSessionCompleteMethod() {
-        super("api/session/post/rq.json","api/session/post/rq.json","api/agent.properties");
+        super("api/session/post/rq.json","api/session/post/rs.json","api/agent.properties");
         replaceUrlPlaceholder("testRunId", String.valueOf(TestBuffer.getTestRunId()));
         addProperty("initiatedAt",DateTime.now());
-        addProperty("startedAt", DateTime.now());
         setAuth();
     }
 }

@@ -1,6 +1,6 @@
 {
   "startedAt": "${startedAt}",
   "name": "${name}",
-  "className": "{className}",
-  "methodName": "{methodName}"
+  "className": "${className}",
+  "methodName": "${methodName}"
 }

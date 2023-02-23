@@ -27,7 +27,7 @@ public class ZebrunnerAgentTest {
     public void testTestExecution(TestStatus testStatus) {
         AuthService.refreshToken();
         TestExecutionService.startTestRun("Zebrunner Agent data provider test");
-        TestExecutionService.testExecutionStart("zebrunner-agent test "+testStatus.getValue(), ZebrunnerAgentTest.class.getName(),
+        TestExecutionService.testExecutionStart("zebrunner-agent test " + testStatus.getValue(), ZebrunnerAgentTest.class.getName(),
                 "testTestExecution");
         TestExecutionService.testExecutionFinish(testStatus);
         TestExecutionService.finishTestRun();
@@ -37,13 +37,25 @@ public class ZebrunnerAgentTest {
     public void testTestExecutionInOneRun() {
         AuthService.refreshToken();
         TestExecutionService.startTestRun("Zebrunner Agent tests in one run");
-        for (TestStatus testStatus:TestStatus.values()) {
-            TestExecutionService.testExecutionStart("zebrunner-agent test "+testStatus.getValue(),
+        for (TestStatus testStatus : TestStatus.values()) {
+            TestExecutionService.testExecutionStart("zebrunner-agent test " + testStatus.getValue(),
                     ZebrunnerAgentTest.class.getName(),
                     "testTestExecutionInOneRun");
             TestExecutionService.testExecutionFinish(testStatus);
         }
 
+        TestExecutionService.finishTestRun();
+    }
+
+    @Test
+    public void testSession() {
+        AuthService.refreshToken();
+        TestExecutionService.startTestRun("Zebrunner Agent test session");
+        TestExecutionService.testSessionComplete();
+        TestExecutionService.testExecutionStart("zebrunner-agent test ", ZebrunnerAgentTest.class.getName(),
+                "testTestExecution");
+        TestExecutionService.testExecutionFinish(TestStatus.PASSED);
+        TestExecutionService.testSessionFinish();
         TestExecutionService.finishTestRun();
     }
 
