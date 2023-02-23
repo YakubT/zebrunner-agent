@@ -40,6 +40,7 @@ public class TestExecutionService {
     public static void testSessionComplete() {
         PostTestSessionCompleteMethod postTestSessionCompleteMethod = new PostTestSessionCompleteMethod();
         Validator.isExpectStatusOK(postTestSessionCompleteMethod);
-        postTestSessionCompleteMethod.callAPI();
+        Response response = postTestSessionCompleteMethod.callAPI();
+        TestBuffer.setSessionId(JsonPath.from(response.asString()).get(ResponseKey.SESSION_ID.getValue()));
     }
 }

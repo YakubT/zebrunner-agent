@@ -6,7 +6,9 @@ public enum ResponseKey {
 
     TEST_RUN("id"),
 
-    TEST_ID("id");
+    TEST_ID("id"),
+
+    SESSION_ID("id");
 
     private String value;
 
