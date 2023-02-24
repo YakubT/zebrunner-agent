@@ -55,7 +55,6 @@ public class ZebrunnerAgentTest {
         TestExecutionService.testExecutionStart("zebrunner-agent test ", ZebrunnerAgentTest.class.getName(),
                 "testTestExecution");
         TestExecutionService.testExecutionFinish(TestStatus.PASSED);
-        TestExecutionService.testSessionFinish();
         TestExecutionService.finishTestRun();
     }
 
