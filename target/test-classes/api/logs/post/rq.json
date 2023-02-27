@@ -1,0 +1,8 @@
+[
+  {
+    "testId": "${test_id}",
+    "level": "INFO",
+    "timestamp": "1588866687",
+    "message": "message"
+  }
+]

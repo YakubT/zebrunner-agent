@@ -53,7 +53,7 @@ public class ZebrunnerAgentTest {
         TestExecutionService.startTestRun("Zebrunner Agent test session");
         TestExecutionService.testSessionComplete();
         TestExecutionService.testExecutionStart("zebrunner-agent test ", ZebrunnerAgentTest.class.getName(),
-                "testTestExecution");
+                "testSession");
         TestExecutionService.testExecutionFinish(TestStatus.PASSED);
         TestExecutionService.finishTestRun();
     }
@@ -63,12 +63,22 @@ public class ZebrunnerAgentTest {
         AuthService.refreshToken();
         TestExecutionService.startTestRun("Zebrunner Agent test session with labels");
         TestExecutionService.testExecutionStart("zebrunner-agent test ", ZebrunnerAgentTest.class.getName(),
-                "testTestExecution");
+                "testLabels");
         TestExecutionService.attachLabelToRunningTest("zebrunner label feature","regression");
         TestExecutionService.testExecutionFinish(TestStatus.PASSED);
         TestExecutionService.finishTestRun();
     }
 
+    @Test
+    public void testLogs() {
+        AuthService.refreshToken();
+        TestExecutionService.startTestRun("Zebrunner Agent test session with logs");
+        TestExecutionService.testExecutionStart("zebrunner-agent test ", ZebrunnerAgentTest.class.getName(),
+                "testLogs");
+        TestExecutionService.addLogsToRunningTest();
+        TestExecutionService.testExecutionFinish(TestStatus.PASSED);
+        TestExecutionService.finishTestRun();
+    }
     @DataProvider(name = "testStatuses")
     public Object[][] dataProvider() {
         return new Object[][]{{TestStatus.PASSED}, {TestStatus.FAILED},

@@ -1,6 +1,7 @@
 package com.solvd.zebrunner_agent;
 
 import com.solvd.zebrunner_agent.enums.HttpStatusCodeType;
+import com.solvd.zebrunner_agent.methods.*;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
@@ -9,13 +10,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.solvd.zebrunner_agent.enums.ResponseKey;
 import com.solvd.zebrunner_agent.enums.TestStatus;
-import com.solvd.zebrunner_agent.methods.PostTestExecutionStartMethod;
-import com.solvd.zebrunner_agent.methods.PostTestSessionCompleteMethod;
-import com.solvd.zebrunner_agent.methods.PostTestRunStartMethod;
-import com.solvd.zebrunner_agent.methods.PutTestExecutionFinishMethod;
-import com.solvd.zebrunner_agent.methods.PutTestExecutionLabelMethod;
-import com.solvd.zebrunner_agent.methods.PutTestSessionFinishMethod;
-import com.solvd.zebrunner_agent.methods.PutTestRunExecutionFinishMethod;
 
 public class TestExecutionService {
 
@@ -68,5 +62,12 @@ public class TestExecutionService {
         putTestExecutionLabelMethod.addProperty("group", group);
         Validator.isExpectedStatusEquals(putTestExecutionLabelMethod, HttpStatusCodeType.OK_NO_CONTENT);
         putTestExecutionLabelMethod.callAPI();
+    }
+
+    public static void addLogsToRunningTest() {
+        PostTestExecutionLogsMethod postTestExecutionLogsMethod = new PostTestExecutionLogsMethod();
+        Validator.isExpectedStatusEquals(postTestExecutionLogsMethod, HttpStatusCodeType.ACCEPTED);
+        postTestExecutionLogsMethod.addProperty("test_id", TestBuffer.getTestId());
+        postTestExecutionLogsMethod.callAPI();
     }
 }
