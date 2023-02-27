@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "key": "feature",
+      "value": "${feature}"
+    },
+    {
+      "key": "group",
+      "value": "${group}"
+    }
+  ]
+}

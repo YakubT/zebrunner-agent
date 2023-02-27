@@ -1,7 +1,0 @@
-[2023-02-24 04:12:56] [1] [INFO] [TestNG] Running:
-  /Users/anatoliiyakubyshyn/Library/Caches/JetBrains/IdeaIC2022.3/temp-testng-customsuite.xml
-
-[2023-02-24 04:12:59] [1] [INFO] Base properties loaded: api/agent.properties
-[2023-02-24 04:13:02] [1] [INFO] Base properties loaded: api/agent.properties
-[2023-02-24 04:13:02] [1] [INFO] Base properties loaded: api/agent.properties
-[2023-02-24 04:13:03] [1] [INFO] {"requestId":"7bc2bf62ddfee789","code":"REP-1003","message":"Supplied request body fails to meet validation constraints"}

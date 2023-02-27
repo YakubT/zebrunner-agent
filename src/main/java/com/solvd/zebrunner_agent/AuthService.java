@@ -29,7 +29,7 @@ public class AuthService {
     public static void refreshToken() {
         PostAuthenticationMethod postAuthenticationMethod = new PostAuthenticationMethod();
         Response response = postAuthenticationMethod.callAPI();
-        Validator.isExpectStatusOK(postAuthenticationMethod);
+        Validator.isExpectedStatusOK(postAuthenticationMethod);
         AuthService.authToken = JsonPath.from(response.asString()).get(ResponseKey.AUTH_TOKEN.getValue()).toString();
     }
 }

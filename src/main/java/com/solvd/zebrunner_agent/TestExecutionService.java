@@ -1,5 +1,6 @@
 package com.solvd.zebrunner_agent;
 
+import com.solvd.zebrunner_agent.enums.HttpStatusCodeType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
@@ -22,50 +23,50 @@ public class TestExecutionService {
 
     public static void startTestRun(String RunName) {
         PostTestRunStartMethod postTestRunStartMethod = new PostTestRunStartMethod(RunName);
-        Validator.isExpectStatusOK(postTestRunStartMethod);
+        Validator.isExpectedStatusOK(postTestRunStartMethod);
         Response response = postTestRunStartMethod.callAPI();
         TestBuffer.setTestRunId(JsonPath.from(response.asString()).get(ResponseKey.TEST_RUN.getValue()));
     }
 
     public static void finishTestRun() {
         PutTestRunExecutionFinishMethod putTestRunExecutionFinishMethod = new PutTestRunExecutionFinishMethod();
-        Validator.isExpectStatusOK(putTestRunExecutionFinishMethod);
+        Validator.isExpectedStatusOK(putTestRunExecutionFinishMethod);
         putTestRunExecutionFinishMethod.callAPI();
     }
 
     public static void testExecutionStart(String name, String claasName, String methodName) {
         PostTestExecutionStartMethod postTestExecutionStartMethod = new PostTestExecutionStartMethod(name,
                 claasName, methodName);
-        Validator.isExpectStatusOK(postTestExecutionStartMethod);
+        Validator.isExpectedStatusOK(postTestExecutionStartMethod);
         Response response = postTestExecutionStartMethod.callAPI();
         TestBuffer.setTestId(JsonPath.from(response.asString()).get(ResponseKey.TEST_ID.getValue()));
     }
 
     public static void testExecutionFinish(TestStatus status) {
         PutTestExecutionFinishMethod putTestExecutionFinishMethod = new PutTestExecutionFinishMethod(status);
-        Validator.isExpectStatusOK(putTestExecutionFinishMethod);
+        Validator.isExpectedStatusOK(putTestExecutionFinishMethod);
         putTestExecutionFinishMethod.addProperty("result", status.getValue());
         Response response = putTestExecutionFinishMethod.callAPI();
     }
 
     public static void testSessionComplete() {
         PostTestSessionCompleteMethod postTestSessionCompleteMethod = new PostTestSessionCompleteMethod();
-        Validator.isExpectStatusOK(postTestSessionCompleteMethod);
+        Validator.isExpectedStatusOK(postTestSessionCompleteMethod);
         Response response = postTestSessionCompleteMethod.callAPI();
         TestBuffer.setSessionId(JsonPath.from(response.asString()).get(ResponseKey.SESSION_ID.getValue()));
     }
 
     public static void testSessionFinish() {
         PutTestSessionFinishMethod putTestSessionFinishMethod = new PutTestSessionFinishMethod();
-        Validator.isExpectStatusOK(putTestSessionFinishMethod);
+        Validator.isExpectedStatusOK(putTestSessionFinishMethod);
         putTestSessionFinishMethod.callAPI();
     }
 
     public static void attachLabelToRunningTest(String feature, String group) {
         PutTestExecutionLabelMethod putTestExecutionLabelMethod = new PutTestExecutionLabelMethod();
-        Validator.isExpectStatusOK(putTestExecutionLabelMethod);
-        putTestExecutionLabelMethod.addProperty("feature",feature);
-        putTestExecutionLabelMethod.addProperty("group",group);
+        putTestExecutionLabelMethod.addProperty("feature", feature);
+        putTestExecutionLabelMethod.addProperty("group", group);
+        Validator.isExpectedStatusEquals(putTestExecutionLabelMethod, HttpStatusCodeType.OK_NO_CONTENT);
         putTestExecutionLabelMethod.callAPI();
     }
 }

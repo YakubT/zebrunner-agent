@@ -58,6 +58,17 @@ public class ZebrunnerAgentTest {
         TestExecutionService.finishTestRun();
     }
 
+    @Test
+    public void testLabels() {
+        AuthService.refreshToken();
+        TestExecutionService.startTestRun("Zebrunner Agent test session with labels");
+        TestExecutionService.testExecutionStart("zebrunner-agent test ", ZebrunnerAgentTest.class.getName(),
+                "testTestExecution");
+        TestExecutionService.attachLabelToRunningTest("zebrunner label feature","regression");
+        TestExecutionService.testExecutionFinish(TestStatus.PASSED);
+        TestExecutionService.finishTestRun();
+    }
+
     @DataProvider(name = "testStatuses")
     public Object[][] dataProvider() {
         return new Object[][]{{TestStatus.PASSED}, {TestStatus.FAILED},
