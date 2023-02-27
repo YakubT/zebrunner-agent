@@ -1,0 +1,9 @@
+{
+  "id": "type:Integer",
+  "uuid": "type:String",
+  "name": "type:String",
+  "status": "type:String",
+  "startedAt": "skip",
+  "endedAt": "skip",
+  "framework": "testng"
+}

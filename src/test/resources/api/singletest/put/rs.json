@@ -1,0 +1,10 @@
+{
+  "id":"type:Integer",
+  "name":"type:String",
+  "className":"type:String",
+  "methodName":"type:String",
+  "startedAt":"skip",
+  "endedAt":"skip",
+  "maintainer":"type:String",
+  "result":"type:String"
+}

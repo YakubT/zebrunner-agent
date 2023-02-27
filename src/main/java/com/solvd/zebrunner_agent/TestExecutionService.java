@@ -20,12 +20,14 @@ public class TestExecutionService {
         Validator.isExpectedStatusOK(postTestRunStartMethod);
         Response response = postTestRunStartMethod.callAPI();
         TestBuffer.setTestRunId(JsonPath.from(response.asString()).get(ResponseKey.TEST_RUN.getValue()));
+        Validator.validateResponse(postTestRunStartMethod);
     }
 
     public static void finishTestRun() {
         PutTestRunExecutionFinishMethod putTestRunExecutionFinishMethod = new PutTestRunExecutionFinishMethod();
         Validator.isExpectedStatusOK(putTestRunExecutionFinishMethod);
         putTestRunExecutionFinishMethod.callAPI();
+        Validator.validateResponse(putTestRunExecutionFinishMethod);
     }
 
     public static void testExecutionStart(String name, String claasName, String methodName) {
@@ -33,6 +35,7 @@ public class TestExecutionService {
                 claasName, methodName);
         Validator.isExpectedStatusOK(postTestExecutionStartMethod);
         Response response = postTestExecutionStartMethod.callAPI();
+        Validator.validateResponse(postTestExecutionStartMethod);
         TestBuffer.setTestId(JsonPath.from(response.asString()).get(ResponseKey.TEST_ID.getValue()));
     }
 
@@ -41,6 +44,7 @@ public class TestExecutionService {
         Validator.isExpectedStatusOK(putTestExecutionFinishMethod);
         putTestExecutionFinishMethod.addProperty("result", status.getValue());
         Response response = putTestExecutionFinishMethod.callAPI();
+        Validator.validateResponse(putTestExecutionFinishMethod);
     }
 
     public static void testSessionComplete() {
