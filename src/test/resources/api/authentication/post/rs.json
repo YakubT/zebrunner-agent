@@ -1,0 +1,27 @@
+{
+  "tenantName":"solvdinternal",
+  "userId":"type:Integer",
+  "permissionsSuperset": ["reporting:stacktrace-labels:assign"],
+  "projectAssignments":
+  [{"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"ADMINISTRATOR"},
+    {"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"},{
+    "projectId":"type:Integer","role":"GUEST"},{
+    "projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"},
+    {"projectId":"type:Integer","role":"GUEST"}],
+  "authTokenType":"Bearer",
+  "authToken":"type:String",
+  "authTokenExpiresAt":"skip",
+  "authTokenExpirationInSecs":"type:Integer",
+  "refreshToken":"skip"
+}

@@ -2,6 +2,7 @@ package com.solvd.zebrunner_agent;
 
 import com.qaprosoft.carina.core.foundation.api.AbstractApiMethodV2;
 import com.solvd.zebrunner_agent.enums.HttpStatusCodeType;
+import org.skyscreamer.jsonassert.JSONCompareMode;
 
 public class Validator {
 
@@ -11,5 +12,9 @@ public class Validator {
 
     public static void isExpectedStatusEquals(AbstractApiMethodV2 apiMethod, HttpStatusCodeType httpStatusCodeType) {
         apiMethod.request.expect().statusCode(httpStatusCodeType.getStatusCode());
+    }
+
+    public static void validateResponse(AbstractApiMethodV2 apiMethod) {
+        apiMethod.validateResponse();
     }
 }
