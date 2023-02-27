@@ -8,12 +8,13 @@ import org.apache.logging.log4j.Logger;
 
 import com.solvd.zebrunner_agent.enums.ResponseKey;
 import com.solvd.zebrunner_agent.enums.TestStatus;
-import com.solvd.zebrunner_agent.methods.PutTestExecutionFinishMethod;
-import com.solvd.zebrunner_agent.methods.PutTestSessionFinishMethod;
-import com.solvd.zebrunner_agent.methods.PutTestRunExecutionFinishMethod;
 import com.solvd.zebrunner_agent.methods.PostTestExecutionStartMethod;
 import com.solvd.zebrunner_agent.methods.PostTestSessionCompleteMethod;
 import com.solvd.zebrunner_agent.methods.PostTestRunStartMethod;
+import com.solvd.zebrunner_agent.methods.PutTestExecutionFinishMethod;
+import com.solvd.zebrunner_agent.methods.PutTestExecutionLabelMethod;
+import com.solvd.zebrunner_agent.methods.PutTestSessionFinishMethod;
+import com.solvd.zebrunner_agent.methods.PutTestRunExecutionFinishMethod;
 
 public class TestExecutionService {
 
@@ -58,5 +59,13 @@ public class TestExecutionService {
         PutTestSessionFinishMethod putTestSessionFinishMethod = new PutTestSessionFinishMethod();
         Validator.isExpectStatusOK(putTestSessionFinishMethod);
         putTestSessionFinishMethod.callAPI();
+    }
+
+    public static void attachLabelToRunningTest(String feature, String group) {
+        PutTestExecutionLabelMethod putTestExecutionLabelMethod = new PutTestExecutionLabelMethod();
+        Validator.isExpectStatusOK(putTestExecutionLabelMethod);
+        putTestExecutionLabelMethod.addProperty("feature",feature);
+        putTestExecutionLabelMethod.addProperty("group",group);
+        putTestExecutionLabelMethod.callAPI();
     }
 }
