@@ -1,14 +1,11 @@
 {
   "id": "type:Integer",
   "initiatedAt": "skip",
-  "startedAt": "skip",
   "status": "type:String",
   "capabilities": {},
   "desiredCapabilities": {
     "browserName": "type:String",
     "platformName": "type:String"
   },
-  "testIds": [
-    "skip"
-  ]
+  "testIds": "skip"
 }

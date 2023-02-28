@@ -1,7 +1,5 @@
 package com.solvd.zebrunner_agent;
 
-import com.solvd.zebrunner_agent.enums.HttpStatusCodeType;
-import com.solvd.zebrunner_agent.methods.*;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
@@ -10,6 +8,15 @@ import org.apache.logging.log4j.Logger;
 
 import com.solvd.zebrunner_agent.enums.ResponseKey;
 import com.solvd.zebrunner_agent.enums.TestStatus;
+import com.solvd.zebrunner_agent.enums.HttpStatusCodeType;
+import com.solvd.zebrunner_agent.methods.PostTestExecutionLogsMethod;
+import com.solvd.zebrunner_agent.methods.PostTestExecutionStartMethod;
+import com.solvd.zebrunner_agent.methods.PostTestRunStartMethod;
+import com.solvd.zebrunner_agent.methods.PostTestSessionCompleteMethod;
+import com.solvd.zebrunner_agent.methods.PutTestExecutionLabelMethod;
+import com.solvd.zebrunner_agent.methods.PutTestExecutionFinishMethod;
+import com.solvd.zebrunner_agent.methods.PutTestRunExecutionFinishMethod;
+import com.solvd.zebrunner_agent.methods.PutTestSessionFinishMethod;
 
 public class TestExecutionService {
 
@@ -51,12 +58,14 @@ public class TestExecutionService {
         PostTestSessionCompleteMethod postTestSessionCompleteMethod = new PostTestSessionCompleteMethod();
         Validator.isExpectedStatusOK(postTestSessionCompleteMethod);
         Response response = postTestSessionCompleteMethod.callAPI();
+        Validator.validateResponse(postTestSessionCompleteMethod);
         TestBuffer.setSessionId(JsonPath.from(response.asString()).get(ResponseKey.SESSION_ID.getValue()));
     }
 
     public static void testSessionFinish() {
         PutTestSessionFinishMethod putTestSessionFinishMethod = new PutTestSessionFinishMethod();
         Validator.isExpectedStatusOK(putTestSessionFinishMethod);
+        Validator.validateResponse(putTestSessionFinishMethod);
         putTestSessionFinishMethod.callAPI();
     }
 
