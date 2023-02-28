@@ -77,10 +77,11 @@ public class TestExecutionService {
         putTestExecutionLabelMethod.callAPI();
     }
 
-    public static void addLogsToRunningTest() {
+    public static void addLogsToRunningTest(String message) {
         PostTestExecutionLogsMethod postTestExecutionLogsMethod = new PostTestExecutionLogsMethod();
         Validator.isExpectedStatusEquals(postTestExecutionLogsMethod, HttpStatusCodeType.ACCEPTED);
         postTestExecutionLogsMethod.addProperty("test_id", TestBuffer.getTestId());
+        postTestExecutionLogsMethod.addProperty("message",message);
         postTestExecutionLogsMethod.callAPI();
     }
 }

@@ -75,7 +75,7 @@ public class ZebrunnerAgentTest {
         TestExecutionService.startTestRun("Zebrunner Agent test session with logs");
         TestExecutionService.testExecutionStart("zebrunner-agent test ", ZebrunnerAgentTest.class.getName(),
                 "testLogs");
-        TestExecutionService.addLogsToRunningTest();
+        TestExecutionService.addLogsToRunningTest("Anatolii");
         TestExecutionService.testExecutionFinish(TestStatus.PASSED);
         TestExecutionService.finishTestRun();
     }
