@@ -1,7 +1,7 @@
 package com.solvd.zebrunner_agent.services;
 
-import com.qaprosoft.carina.core.foundation.api.AbstractApiMethodV2;
 import com.solvd.zebrunner_agent.enums.HttpStatusCodeType;
+import com.qaprosoft.carina.core.foundation.api.AbstractApiMethodV2;
 
 public class Validator {
 
