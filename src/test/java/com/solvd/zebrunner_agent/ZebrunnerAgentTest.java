@@ -1,13 +1,13 @@
 package com.solvd.zebrunner_agent;
 
-import com.solvd.zebrunner_agent.services.AuthService;
-import com.solvd.zebrunner_agent.services.TestExecutionService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.solvd.zebrunner_agent.enums.TestStatus;
+import com.solvd.zebrunner_agent.services.AuthService;
+import com.solvd.zebrunner_agent.services.TestExecutionService;
 
 public class ZebrunnerAgentTest {
 
