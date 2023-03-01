@@ -3,7 +3,7 @@ package com.solvd.zebrunner_agent.methods;
 import org.joda.time.DateTime;
 
 import com.solvd.zebrunner_agent.enums.TestStatus;
-import com.solvd.zebrunner_agent.TestBuffer;
+import com.solvd.zebrunner_agent.services.TestBuffer;
 
 public class PutTestExecutionFinishMethod extends BaseApiMethod {
 

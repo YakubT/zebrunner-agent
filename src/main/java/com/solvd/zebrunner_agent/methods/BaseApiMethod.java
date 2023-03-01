@@ -1,6 +1,6 @@
 package com.solvd.zebrunner_agent.methods;
 
-import com.solvd.zebrunner_agent.AuthService;
+import com.solvd.zebrunner_agent.services.AuthService;
 import com.solvd.zebrunner_agent.utils.PropertiesReader;
 import com.solvd.zebrunner_agent.utils.enums.Resources;
 import com.qaprosoft.carina.core.foundation.api.AbstractApiMethodV2;

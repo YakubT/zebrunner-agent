@@ -2,7 +2,7 @@ package com.solvd.zebrunner_agent.methods;
 
 import org.joda.time.DateTime;
 
-import com.solvd.zebrunner_agent.TestBuffer;
+import com.solvd.zebrunner_agent.services.TestBuffer;
 
 public class PostTestSessionCompleteMethod extends BaseApiMethod {
 

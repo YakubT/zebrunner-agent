@@ -1,4 +1,4 @@
-package com.solvd.zebrunner_agent;
+package com.solvd.zebrunner_agent.services;
 
 public class TestBuffer {
 

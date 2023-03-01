@@ -1,6 +1,6 @@
 package com.solvd.zebrunner_agent.methods;
 
-import com.solvd.zebrunner_agent.TestBuffer;
+import com.solvd.zebrunner_agent.services.TestBuffer;
 
 public class PostTestExecutionLogsMethod extends BaseApiMethod {
 
